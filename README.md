@@ -34,8 +34,6 @@ main/java:
 - Request
 - Service
 
-test:
-
 # Getting Started
 
 Criando o JAR do aplicativo na pasta do Docker usando o plug-in maven
