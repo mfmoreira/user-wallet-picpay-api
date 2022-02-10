@@ -1,0 +1,27 @@
+version : '3'
+services :
+  userspringapp :
+    build : .
+    ports :
+      - "8082:8082"
+  dbapp :
+    image : mysql:latest
+    restart : always
+    command: --lower_case_table_names=1
+    environment :
+      MYSQL_DATABASE : 'MY_DB'
+      MYSQL_ROOT_PASSWORD : 'secret'
+    expose:
+      - "3306"
+    ports :
+      - "3306:3306"
+    volumes:
+      - "./scripts/schema_create_user.sql:/docker-entrypoint-initdb.d/1.sql"
+      - "./scripts/schema_create_account.sql:/docker-entrypoint-initdb.d/2.sql"
+      - "./scripts/schema_create_entry.sql:/docker-entrypoint-initdb.d/3.sql"
+      - "./scripts/schema_add_entry_fk.sql:/docker-entrypoint-initdb.d/4.sql"
+      - "./scripts/schema_add_account_fk.sql:/docker-entrypoint-initdb.d/5.sql"
+networks: 
+  default: 
+    external: 
+      name: wallet-network 
