@@ -47,6 +47,9 @@ Tendo o docker instalado em sua máquina:
 Entrar no diretório no projeto:
 cd Docker/
 
+Criar a rede:
+docker network create wallet-network
+
 Executar o comando:
 docker-compose up –-build
 
