@@ -18,6 +18,9 @@ O Wallet API foi criado com:
  - Swagger
 
 # Arquitetura
+
+![alt text](https://github.com/mfmoreira/user-wallet-picpay-api/blob/main/img/wallet-picpay.drawio.png?raw=true)
+
 O projeto Wallet API está divido nas seguintes camadas:
 
 main/java:
